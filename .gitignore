@@ -1,0 +1,48 @@
+# Node.js
+node_modules/
+
+# Parcel
+.parcel-cache/
+
+# Build output
+dist/
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.vscode/
+
+# macOS
+*.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Node package files
+npm-debug.log
+yarn-error.log
+
+# Optional: Uncomment the line below if you're using ESLint
+.eslintcache
+
+# Optional: Uncomment the line below if you're using Prettier
+.prettierignore
+.prettierrc
