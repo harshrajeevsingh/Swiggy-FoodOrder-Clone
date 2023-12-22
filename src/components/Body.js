@@ -21,7 +21,7 @@ const Body = () => {
   async function getRestaurants() {
     const data = await fetch(swiggy_api_URL);
     const json = await data.json();
-    // console.log(json);
+
     setAllRestaurants(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );

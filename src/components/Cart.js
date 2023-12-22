@@ -18,16 +18,9 @@ const Cart = () => {
       </div>
       <div className="cart-Total-sec">
         <ul>
-          <li>gkugigiguiygiuy</li>
-          <li>gkugigiguiygiuy</li>
-          <li>gkugigiguiygiuy</li>
-          <li>gkugigiguiygiuy</li>
-          <li>gkugigiguiygiuy</li>
-          <li>gkugigiguiygiuy</li>
-          <li>gkugigiguiygiuy</li>
-          <li>gkugigiguiygiuy</li>
-          <li>gkugigiguiygiuy</li>
-          <li>gkugigiguiygiuy</li>
+          {cartItems.map((item) => {
+            return <li>{item.price / 100}</li>;
+          })}
         </ul>
         <button
           className="cart-add-btn"

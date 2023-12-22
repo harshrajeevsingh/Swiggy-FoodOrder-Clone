@@ -252,11 +252,11 @@ ul {
   font-size: 15px;
   font-weight: 700;
 }
-li {
+.extra-info-div > li {
   display: inline-block;
 }
 
-li:first-child {
+.extra-info-div > li:first-child {
   margin-right: 24px;
 }
 .res-icon-cost-time {
@@ -380,8 +380,20 @@ li:first-child {
   gap: 32px;
 }
 .cart-Total-sec {
-  max-width: 20%;
+  background-color: #7e808c;
+  min-width: 20%;
+  min-height: 20%;
   margin-top: 30px;
+}
+
+.cart-Total-sec > ul {
+  margin-left: 20px;
+  margin-top: 20px;
+  padding: 0;
+  list-style-type: none;
+  color: #3e4152;
+  font-size: 15px;
+  font-weight: 700;
 }
 .cart-add-btn {
   display: inline-block;

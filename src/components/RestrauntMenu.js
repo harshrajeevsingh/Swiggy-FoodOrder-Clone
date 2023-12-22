@@ -43,7 +43,7 @@ const RestaurantMenu = () => {
         </button>
       </div>
       {/* ----------------------Extra Info(Time & Cost) ---------------------- */}
-      <div style={{ margin: "18px 0px" }}>
+      <div className="extra-info-div" style={{ margin: "18px 0px" }}>
         <ul>
           <li>
             <svg
