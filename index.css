@@ -142,14 +142,8 @@ body {
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
-  background-color: #15605e;
+  background-color: #60b246;
   color: white;
-}
-
-.shimmer-card {
-  width: 200px;
-  height: 200px;
-  background-color: #d4d4d4;
 }
 
 a {
@@ -184,7 +178,10 @@ input:focus {
 }
 .search-btn {
   border: none;
-  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+  /* border-radius: 10px; */
+  margin-left: 10px;
 }
 /* ----------------------------------menu page ------------------------------ */
 .menu-page {
@@ -208,9 +205,9 @@ input:focus {
   text-transform: capitalize;
 }
 .res-Menu-header-info {
-  font-size: 0.93rem;
+  font-size: 1rem;
   color: #7e808c;
-  height: calc(0.93rem + 2px);
+  /* height: calc(0.93rem + 2px); */
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 4px;
@@ -352,6 +349,47 @@ ul {
   text-align: center;
   background-color: #fff;
 }
+.add-item-cont-inc {
+  cursor: pointer;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 90%;
+  bottom: 19px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 0 3px 8px #e9e9eb;
+  border-radius: 4px;
+  border: 1px solid #d4d5d9;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  background-color: #81c26f;
+}
+.add-item-cont-dec {
+  cursor: pointer;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 10%;
+  bottom: 19px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1;
+  box-shadow: 0 3px 8px #e9e9eb;
+  border-radius: 4px;
+  border: 1px solid #d4d5d9;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  background-color: #81c26f;
+}
+
 /*----------------------------------- cart----------------- */
 .cart-Page {
   display: flex;
@@ -367,6 +405,7 @@ ul {
   gap: 12px;
   grid-auto-flow: row;
   /* justify-content: stretch; */
+  box-shadow: 0 3px 8px #e9e9eb;
   align-items: center;
 }
 .cart-card-list {
@@ -412,4 +451,107 @@ ul {
   text-align: center;
   background-color: #fff;
   cursor: pointer;
+}
+
+.emptyCartComp {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
+.cart-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #3e4152;
+  text-align: center;
+}
+/* -----------------------Shimmer------------------- */
+.shimmer-div {
+  max-width: 1200px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin: 110px auto;
+}
+.shimmer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 270px;
+  height: 280px;
+  background-color: transparent;
+}
+.shimmer-card-img {
+  width: 275px;
+  height: 175px;
+  background-color: #cbcbcb;
+  border-radius: 16px;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.shimmer-title {
+  width: 270px;
+  height: 20px;
+  background-color: #cbcbcb;
+  border-radius: 16px;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.shimmer-info-1 {
+  width: 130px;
+  height: 20px;
+  background-color: #cbcbcb;
+  border-radius: 16px;
+}
+.shimmer-info-2 {
+  width: 240px;
+  height: 20px;
+  background-color: #cbcbcb;
+  border-radius: 16px;
+}
+/* -------------------------Shimmer Menu--------------------- */
+
+.shimmer-menu-div {
+  max-width: 1200px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.shimmer-menu-top {
+  width: 800px;
+  height: 250px;
+  margin-bottom: 30px;
+  background-color: #cbcbcb;
+  border-radius: 10px;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.shimmer-menu-item {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+}
+.shimmer-menu-info {
+  width: 660px;
+  height: 120px;
+  background-color: #cbcbcb;
+  border-radius: 16px;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.shimmer-menu-img {
+  width: 120px;
+  height: 120px;
+  background-color: #cbcbcb;
+  border-radius: 16px;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }

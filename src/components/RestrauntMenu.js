@@ -6,12 +6,15 @@ import {
 } from "../contants";
 import useResMenuData from "../utils/useResMenuData";
 import { FaStar } from "react-icons/fa";
-import Shimmer from "./Shimmer";
-import { useDispatch } from "react-redux";
-import { addItem } from "../utils/cartSlice";
+// import Shimmer from "./Shimmer";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, removeItem } from "../utils/cartSlice";
+import ShimmerMenu from "./ShimmerMenu";
 
 const RestaurantMenu = () => {
   // how to read a dynamic URL Params
+  const itemRead = useSelector((store) => store.cart.items);
+  console.log(itemRead);
   const { resId } = useParams();
   const [restaurant, menuItems] = useResMenuData(swiggy_menu_api_URL, resId);
   //   console.log(useResMenuData(swiggy_menu_api_URL, resId));
@@ -20,7 +23,9 @@ const RestaurantMenu = () => {
   const addFoodItem = (item) => {
     dispatch(addItem(item));
   };
-
+  const removeFoodItem = (item) => {
+    dispatch(removeItem(item));
+  };
   return restaurant && menuItems ? (
     <article className="menu-page wrapper2">
       {/* -------------------------Restaurant Info--------------------------- */}
@@ -104,6 +109,7 @@ const RestaurantMenu = () => {
         <div>
           {console.log(menuItems)}
           {menuItems.map((item) => {
+            const itemExist = itemRead.find((i) => i.id === item.id);
             return (
               <div key={item.id} className="menu-detail-box">
                 <div>
@@ -112,16 +118,38 @@ const RestaurantMenu = () => {
                   <div className="item-description">{item?.description}</div>
                 </div>
                 <div className="image-container">
-                  <button onClick={() => addFoodItem(item)} className="add-btn">
+                  <button
+                    onClick={() => addFoodItem(item)}
+                    className="add-btn"
+                    disabled={itemExist ? true : false}
+                  >
                     <img
                       className="item-image"
                       src={ITEM_IMG_CDN_URL + item?.imageId}
                     />
 
                     <div className="add-item-cont">
-                      <div className="add-item-btn">Add</div>
+                      <div className="add-item-btn">
+                        {itemExist ? itemExist.amount : "Add"}
+                      </div>
                     </div>
                   </button>
+                  {itemExist?.amount > 0 && (
+                    <button
+                      className="add-item-cont-inc"
+                      onClick={() => addFoodItem(item)}
+                    >
+                      <div className="add-item-btn-inc">+</div>
+                    </button>
+                  )}
+                  {itemExist?.amount > 0 && (
+                    <button
+                      className="add-item-cont-dec"
+                      onClick={() => removeFoodItem(item)}
+                    >
+                      <div className="add-item-btn-inc">-</div>
+                    </button>
+                  )}
                 </div>
               </div>
             );
@@ -131,7 +159,7 @@ const RestaurantMenu = () => {
       {console.log(`Restaurant id : ${resId}`)}
     </article>
   ) : (
-    <Shimmer />
+    <ShimmerMenu />
   );
 };
 
