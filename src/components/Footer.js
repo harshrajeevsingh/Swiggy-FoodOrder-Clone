@@ -5,7 +5,7 @@ const Footer = () => {
   // const { user } = useContext(UserContext);
   return (
     <>
-      <p className="footer">Footer</p>
+      <p className="footer">Made with ❤️ in React</p>
       {/* <p>
         Developed by <strong>{user.name}</strong>
       </p> */}
