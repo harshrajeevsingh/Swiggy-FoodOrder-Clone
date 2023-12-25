@@ -301,7 +301,6 @@ ul {
   /* min-width: 118px; */
   height: 120px;
   font-size: 0;
-
   cursor: pointer;
 }
 .add-btn {
@@ -405,7 +404,6 @@ ul {
   gap: 12px;
   grid-auto-flow: row;
   /* justify-content: stretch; */
-  box-shadow: 0 3px 8px #e9e9eb;
   align-items: center;
 }
 .cart-card-list {
@@ -463,6 +461,24 @@ ul {
   font-weight: 800;
   color: #3e4152;
   text-align: center;
+}
+.cart-card-name {
+  font-size: medium;
+  font-weight: 600;
+  color: #282c3f;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.span-amount {
+  font-weight: 400;
+  color: #3e4152;
+}
+.cart-card-container {
+  position: relative;
+  margin-top: 30px;
+  margin-left: 16px;
+  font-size: 0;
 }
 /* -----------------------Shimmer------------------- */
 .shimmer-div {
