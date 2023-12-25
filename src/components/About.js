@@ -3,8 +3,9 @@ const About = () => {
     <div>
       <h1>About Us Page</h1>
       <p>
-        Mehnat kar bhai, mehnat s project, ,khub sikh, fir jaakar, khud s solo
-        porject bana, bahut kuchh sikhne ko milega tereko
+        I built this project to learn React advanced concepts. Also this project
+        uses Redux Toolkit for better state management. For the styling, I wrote
+        normal CSS, without amny frameworks like Tailwind CSS.
       </p>
     </div>
   );
