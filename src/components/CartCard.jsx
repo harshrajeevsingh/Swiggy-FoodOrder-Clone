@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { IMG_CDN_URL } from "../contants";
-import { removeItem } from "../utils/cartslice";
+import { removeItem, addItem } from "../utils/cartslice";
 
 // const CartCard = ({ name, imageId, price }) => {
 
@@ -25,29 +25,18 @@ const CartCard = (props) => {
         <p className="cart-card-name">₹ {props.price/100} <span className="span-amount">X{props.amount}</span></p>
         {/* <button className="cart-add-btn" onClick={() => removeFoodItem(props)}>Remove</button> */}
         <div className="cart-card-container">
-          {!itemExist.amount<1 ? <button
-                    onClick={() => addFoodItem(props)}
+           <button
                     className="add-btn"
-                    disabled={itemExist ? true : false}
+                    disabled={false}
                   ><div className="add-item-cont">
                   <div className="add-item-btn">
-                    {itemExist ? itemExist.amount : "Add"}
+                    {itemExist.amount}
                   </div>
                 </div>
-              </button> : null}
-        {/* <button
-                    onClick={() => addFoodItem(props)}
-                    className="add-btn"
-                    disabled={itemExist ? true : false}
-                  ><div className="add-item-cont">
-                  <div className="add-item-btn">
-                    {itemExist ? itemExist.amount : "Add"}
-                  </div>
-                </div>
-              </button> */}
+              </button>
               {itemExist?.amount > 0 && (
                     <button
-                      className="add-item-cont-inc"
+                      className="add-item-cont-inc-cart"
                       onClick={() => addFoodItem(props)}
                     >
                       <div className="add-item-btn-inc">+</div>
@@ -55,7 +44,7 @@ const CartCard = (props) => {
                   )}
                   {itemExist?.amount > 0 && (
                     <button
-                      className="add-item-cont-dec"
+                      className="add-item-cont-dec-cart"
                       onClick={() => removeFoodItem(props)}
                     >
                       <div className="add-item-btn-inc">-</div>
