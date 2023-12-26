@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div>
+    <div style={{ minHeight: "100vh" }}>
       <h1>About Us Page</h1>
       <p>
         I built this project to learn React advanced concepts. Also this project
